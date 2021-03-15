@@ -14,6 +14,8 @@ Necessary externals: cyclone, zmq (https://github.com/sansculotte/pd-zmq you wil
 Externals:
 Add Cyclone: go to find externals, type cyclone
    
+![image](https://github.com/REPLICA-Collective-Rep/SonifiedCollar-Bela/blob/main/Pictures/Picture%201.png)
+   
 Choose the version you want to install. I have 5.3 on mine. You can get a newer one if you like and it should work the same. It installs it in your externals folder
 
 Add zmq:
@@ -26,12 +28,17 @@ You can use brew on terminal to install.
 Intro to using homebrew >> https://www.howtogeek.com/211541/homebrew-for-os-x-easily-installs-desktop-apps-and-terminal-utilities/
 Open terminal, type “brew install zmq” (see the second line)
 Then it should install. (I already had it installed, so I get an error stating I already have it.)
- 
+
+![image](https://github.com/REPLICA-Collective-Rep/SonifiedCollar-Bela/blob/main/Pictures/Picture%202.png)
 
 You will need to add the path to your externals folder from preference. Check where your created your externals folder.
-  
+
+![image](https://github.com/REPLICA-Collective-Rep/SonifiedCollar-Bela/blob/main/Pictures/Picture%203.png)
+
 Check if the zmq and gate object is recognized. It is placed on the right corner. If you see it with a dotted line, the externals are not recognized and the patch will not function properly.
  
+![image](https://github.com/REPLICA-Collective-Rep/SonifiedCollar-Bela/blob/main/Pictures/Picture%204.png)
+
 Go to your OS and connect your computer to the same network as BELA devices
 If you are using router from Meredith, it is network name: “things”  password: “shape2020”
 Make sure that proxy server is running (it is inside the raspberry pi, make sure to turn on the power)
@@ -39,8 +46,11 @@ Make sure that proxy server is running (it is inside the raspberry pi, make sure
 ## Using the controller
 Open ontroller_panel.pd (place all three patches in the same folder)
 
+![image](https://github.com/REPLICA-Collective-Rep/SonifiedCollar-Bela/blob/main/Pictures/Picture%205.png)
  
 ### Individual control panel:
+
+![image](https://github.com/REPLICA-Collective-Rep/SonifiedCollar-Bela/blob/main/Pictures/Picture%206.png)
 
 <p>SENSOR: shows the sensor reading of this device. If calibrated, it shows after applying calibration.</p>
 
@@ -71,7 +81,7 @@ Here is how you can train it step by step.
 -	Clear the last data by clicking “ml_clear”
 -	Click preset from your mode to show the target value to the ML
 
-
+![image](https://github.com/REPLICA-Collective-Rep/SonifiedCollar-Bela/blob/main/Pictures/Picture%207.png)
 
  	The first in the list is always the quiet value. When you click through, CONTROL slider should be changing and you can hear the target sound from individual speakers. You can also move the CONTROL slider to adjust the target value
 If you use presets from other mode, (i.e. granular preset in voder) it works, but will sound strange.
@@ -85,7 +95,9 @@ If the training is not working as well as you wanted, for example, the quiet pos
 
 When you are out of train_mode, you will start to see SENSOR data controlling MAPPED data. 
 
-ALL control panel:
+### ALL control panel:
+
+![image](https://github.com/REPLICA-Collective-Rep/SonifiedCollar-Bela/blob/main/Pictures/Picture%208.png)
 
  	When you use CONTROL ALL panel, you can control all the connected devices at once. The functionality of each buttons are the same as the individual ones.
 
@@ -94,13 +106,16 @@ When you click get_ip, you will get all the connected device in in PD window (co
 Random triggers random walk mode (randomly generated sensor data). This is used for development process.
 
 
-When you want to change the preset value:
+#### When you want to change the preset value:
 Preset values are saved in each preset subpatches. Ctrl-click the preset panel and choose “open”. This will open the subpatch. Command-E to enter edit mode, and you can change/edit the preset that is saved in message boxes.
+
+![image](https://github.com/REPLICA-Collective-Rep/SonifiedCollar-Bela/blob/main/Pictures/Picture%209.png)
  
 When you want to save the preset that you manually changed on the CONTROL slider, or mapped values came out from performers, you can click “grab_preset” in individual control panels. This will result in printing out the list to this message box on the right bottom corner. You can copy this box, or partly copy the number and paste in the preset subpatch.
  
+![image](https://github.com/REPLICA-Collective-Rep/SonifiedCollar-Bela/blob/main/Pictures/Picture%2010.png)
 
-Connecting directly to Bela:
+## Connecting directly to Bela:
 You can connect Bela directly from the browser or from ssh in the terminal.
 Here I note how to access using a browser.
 Make sure that your computer is connected to the same network as Bela and proxy.
@@ -109,7 +124,7 @@ Get ip address of bela using “get_ip” from PD controller. (you can alternati
 
 Type in the ip address you want to connect. On the browser's ip address box. You will get the GUI of Bela
 
- 
+![image](https://github.com/REPLICA-Collective-Rep/SonifiedCollar-Bela/blob/main/Pictures/Picture%2011.png) 
 
 Alternatively, you can try the address “bela.local” , but if you have multiple Bela on network, it will not work.
 If you connect Bela on USB cable, you can access Bela over the USB. in this case the address is 192.168.7.2(mac) or 192.168.6.2 (windows, but sometimes on mac too)
@@ -121,7 +136,7 @@ If you need to stop or restart the patch (for example, it can fail the ML traini
 If you need to update files (pd patches or sound files), select the correct folder from “your projects”, drop-in the files you want to update, stop the patch, and “build and run” the patch. 
 
 
-Maintenance:
+## Maintenance:
 Battery: Plug out the USB-A cable from the battery to turn off when you do not use it.
 You will need to make sure that the battery is charged. There are two batteries. One on the back, a black power bank, and the one included in the portable speakers. Both take microUSB cable to charge it. 
 On the power bank battery, the power is charged through the micro USB plug, and it comes out from USB A plug. Do not mix up!
@@ -129,22 +144,26 @@ On the power bank battery, the power is charged through the micro USB plug, and 
 You can use normal USB power adapters to charge these devices. Speaker lasts 5h when fully charged. Power Bank also can provide a few hours of power to Bela (not tested exactly how long..)
 
 Speaker inlet for microUSB to charge.
-  
-
+![image](https://github.com/REPLICA-Collective-Rep/SonifiedCollar-Bela/blob/main/Pictures/Picture%2012.png)  
+![image](https://github.com/REPLICA-Collective-Rep/SonifiedCollar-Bela/blob/main/Pictures/Picture%2013.png)
 Power Bank. USB micro (left most) to charge. USB-A (left most, big one) is to get the power out to Bela.
-  
-
+![image](https://github.com/REPLICA-Collective-Rep/SonifiedCollar-Bela/blob/main/Pictures/Picture%2014.png)
+![image](https://github.com/REPLICA-Collective-Rep/SonifiedCollar-Bela/blob/main/Pictures/Picture%2015.png)
 To charge, you can use android phone charging cable/plugs like this one
-  
-Sensor Orders:
-Please place the sensors on bodies according to this order. It will be easier if you wear the collar first, drop the cable+sensor through your shirt/pants and fix the sensor using skin glue and kinesiology tape.
- 
+![image](https://github.com/REPLICA-Collective-Rep/SonifiedCollar-Bela/blob/main/Pictures/Picture%2016.png)
+![image](https://github.com/REPLICA-Collective-Rep/SonifiedCollar-Bela/blob/main/Pictures/Picture%2017.png)
+
+## Sensor Orders:
+Please place the sensors on bodies according to this order. It will be easier if you wear the collar first, drop the cable+sensor through your shirt/pants and fix the sensor using skin glue and kinesiology tape. 
+
+![image](https://github.com/REPLICA-Collective-Rep/SonifiedCollar-Bela/blob/main/Pictures/Picture%2018.png)
+
 Bend sensors are connected already to the cables. Each sensor connects with one blue and one dark blue cable. You can switch blue/dark blue order on the sensor. It will not affect the readings.
 
 Please use eyelash/skin glue and kinesiology tape (you can buy them in DM) to place the sensors on your body. 
 On the collar, your name inicial is embroidered (KI for Kirsty, KA for Kate, Dm for Dimitri). Please use the one with your name as it corresponds to the controller panel. There are slight differences in cable lengths according to your height. 
 
-
+![image](https://github.com/REPLICA-Collective-Rep/SonifiedCollar-Bela/blob/main/Pictures/Picture%2019.png)
 
  
-![image](https://user-images.githubusercontent.com/54774888/111145934-26a08580-8589-11eb-9c64-664c05cf474b.png)
+
